@@ -3,37 +3,87 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>XI TKJ 3 - New Site</title>
+  <title>XI TKJ 3 Clone</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-  <header>
-    <img src="assets/nav-icon.png" alt="Nav Icon" class="nav-icon"/>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#structure">Structure & Schedule</a>
-    </nav>
-  </header>
+  <main>
+    <!-- HERO (same as PNG) -->
+    <section id="hero">
+      <img src="assets/logo-tkj.png" alt="Logo" class="logo">
+      <h1>Hi, Visitor!</h1>
+      <h2>WELCOME<br>XI TKJ 3</h2>
+      <div class="stats">
+        <div>25 <span>Students</span></div>
+        <div>37 <span>Achievements</span></div>
+        <div>12 <span>Events</span></div>
+      </div>
+      <div class="links">
+        <a href="https://old.example.com" class="btn">Old Website</a>
+        <a href="https://instagram.com/xi_tkj3" class="btn ig"><i class="fab fa-instagram"></i> Class Instagram</a>
+        <a href="#gallery" class="btn">View More</a>
+      </div>
+    </section>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <img src="assets/logo-tkj.png" alt="TKJ Logo" class="logo"/>
-    <h1>Welcome to <span>XI TKJ 3</span></h1>
-    <p>25 Students • 37 Achievements • 12 Events</p>
-    <div class="socials">
-      <a href="https://instagram.com/xi_tkj3" target="_blank"><i class="fab fa-instagram"></i> Class Instagram</a>
-      <a href="https://chat.whatsapp.com/invite/yourGroup" target="_blank"><i class="fab fa-whatsapp"></i> Join WhatsApp</a>
-    </div>
-  </section>
+    <!-- STRUCTURE & SCHEDULE -->
+    <section id="structure">
+      <h3>Structure & Schedule</h3>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="gallery">
-    <h2>Gallery</h2>
-    <div class="grid-gallery">
-      <!-- 17 student cards -->
+      <!-- Officers -->
+      <div class="officers">
+        <p><strong>Wali Kelas:</strong> Abdul Wahab S.Pd</p>
+        <p><strong>Ketua Kelas:</strong> Putry</p>
+        <p><strong>Wakil Ketua:</strong> Jeriko</p>
+        <p><strong>Sekretaris:</strong> Pratiwi & Paulista</p>
+        <p><strong>Bendahara:</strong> Lista & Davina</p>
+        <p><strong>Keamanan:</strong> Damar & Windi</p>
+        <p><strong>Kebersihan:</strong> Jeriko & Raka</p>
+        <p><strong>Kesehatan:</strong> Eki & Hendri</p>
+        <p><strong>Peralatan:</strong> Fajri, Windi, Fadly</p>
+      </div>
+
+      <!-- Full Schedule -->
+      <h4>Class Schedule</h4>
+      <table id="scheduleTable">
+        <thead><tr><th>Day</th><th>08:00</th><th>09:00</th><th>10:00</th><th>11:00</th><th>12:00</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <!-- Duty Roster -->
+      <h4>Duty Roster</h4>
+      <table id="piketTable">
+        <thead><tr><th>Day</th><th>Student on Duty</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- GALLERY (17 students) -->
+    <section id="gallery">
+      <h3>Gallery</h3>
+      <div class="grid-gallery" id="studentGrid"></div>
+    </section>
+
+    <!-- Mini Chat -->
+    <section id="chat">
+      <h3>Quick Chat</h3>
+      <div id="chatBox"></div>
+      <form id="chatForm">
+        <input id="chatInput" placeholder="Tulis pesan..." required/>
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Floating WA -->
+  <a href="https://wa.me/6281234567890?text=Halo%20XI%20TKJ%203" class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
       <!-- auto-generated via JS -->
     </div>
   </section>
