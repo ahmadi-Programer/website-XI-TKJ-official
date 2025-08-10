@@ -1,39 +1,49 @@
-// DATA JADWAL PELAJARAN
-const jadwal = [
-  { hari: 'Senin', mapel: ['PKK', 'PKK', 'Bindo', 'MM', 'Sejarah'] },
-  { hari: 'Selasa', mapel: ['PKK', 'PKK', 'Inggris', 'MM', 'Sejarah'] },
-  { hari: 'Rabu', mapel: ['PKK', 'PKK', 'Matematika', 'MM', 'PJOK'] },
-  { hari: 'Kamis', mapel: ['PKK', 'PKK', 'PKN', 'MM', 'Seni Budaya'] },
-  { hari: 'Jumat', mapel: ['PKK', 'PKK', 'Agama', 'MM', 'Bahasa Jawa'] },
+const students = [
+  'Putry','Jeriko','Pratiwi','Lista','Damar','Windi','Raka','Eki','Hendri',
+  'Fajri','Fadly','Salsa','Dicky','Nadia','Rizky','Lutfi','Ayu'
 ];
 
-// DATA SISWA
-const siswa = [
-  { nama: 'Andi Wijaya', foto: 'img/foto-siswa-1.jpg' },
-  { nama: 'Budi Santoso', foto: 'img/foto-siswa-2.jpg' },
-  { nama: 'Citra Lestari', foto: 'img/foto-siswa-3.jpg' },
-  { nama: 'Dewi Anggraeni', foto: 'img/foto-siswa-4.jpg' },
-  { nama: 'Eko Prasetyo', foto: 'img/foto-siswa-5.jpg' },
-  { nama: 'Fitri Handayani', foto: 'img/foto-siswa-6.jpg' },
-  { nama: 'Guntur Wibowo', foto: 'img/foto-siswa-7.jpg' },
-  { nama: 'Hana Susanti', foto: 'img/foto-siswa-8.jpg' },
-  { nama: 'Indra Kurniawan', foto: 'img/foto-siswa-9.jpg' },
-  { nama: 'Joko Nugroho', foto: 'img/foto-siswa-10.jpg' },
-  { nama: 'Kiki Amalia', foto: 'img/foto-siswa-11.jpg' },
-  { nama: 'Lina Marlina', foto: 'img/foto-siswa-12.jpg' },
-  { nama: 'Maman Abdurrahman', foto: 'img/foto-siswa-13.jpg' },
-  { nama: 'Nina Sari', foto: 'img/foto-siswa-14.jpg' },
-  { nama: 'Oki Ramadhan', foto: 'img/foto-siswa-15.jpg' },
-  { nama: 'Putri Amelia', foto: 'img/foto-siswa-16.jpg' },
-  { nama: 'Rizky Pratama', foto: 'img/foto-siswa-17.jpg' },
+// --- Schedule data ---
+const schedule = [
+  {day:'Senin',slots:['PKK','PKK','Bindo','MM','Sejarah']},
+  {day:'Selasa',slots:['PKK','PKK','Inggris','MM','Sejarah']},
+  {day:'Rabu',slots:['PKK','PKK','MTK','MM','PJOK']},
+  {day:'Kamis',slots:['PKK','PKK','PKN','MM','Seni']},
+  {day:'Jumat',slots:['PKK','PKK','Agama','MM','Jawa']}
 ];
 
-// JADWAL PIKET (ROTASI)
-const piket = [];
-for (let i = 0; i < 7; i++) {
-  const dayNames = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
-  piket.push({ hari: dayNames[i], nama: siswa[i % siswa.length].nama });
-}
+// Render schedule
+const stBody=document.querySelector('#scheduleTable tbody');
+schedule.forEach(({day,slots})=>{
+  stBody.innerHTML+=`<tr><td>${day}</td>${slots.map(s=>`<td>${s}</td>`).join('')}</tr>`;
+});
+
+// Render piket
+const pBody=document.querySelector('#piketTable tbody');
+['Senin','Selasa','Rabu','Kamis','Jumat'].forEach((d,i)=>{
+  pBody.innerHTML+=`<tr><td>${d}</td><td>${students[i % students.length]}</td></tr>`;
+});
+
+// Render 17 student cards
+const grid=document.getElementById('studentGrid');
+students.forEach((name,i)=>{
+  grid.innerHTML+=`
+    <div class="card">
+      <img src="assets/student-${i+1}.jpg" onerror="this.src='https://via.placeholder.com/100?text=${name}'"/>
+      ${name}
+    </div>`;
+});
+
+// Mini chat
+const box=document.getElementById('chatBox');
+document.getElementById('chatForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const p=document.createElement('p');
+  p.textContent=`Anon: ${e.target.chatInput.value}`;
+  box.appendChild(p);
+  e.target.chatInput.value='';
+  box.scrollTop=box.scrollHeight;
+});
 
 // RENDER JADWAL PELAJARAN
 const tJadwal = document.getElementById('tabelJadwal');
