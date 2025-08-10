@@ -1,77 +1,96 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TKJ Class X - Official Site</title>
+  <title>XI TKJ 3 - New Site</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav>
-    <img src="img/logo-tkj.png" alt="Logo TKJ" class="logo"/>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#jadwal">Jadwal</a></li>
-      <li><a href="#piket">Piket</a></li>
-      <li><a href="#siswa">Siswa</a></li>
-      <li><a href="#struktur">Struktur</a></li>
-      <li><a href="#forum">Forum</a></li>
-    </ul>
-  </nav>
+  <header>
+    <img src="assets/nav-icon.png" alt="Nav Icon" class="nav-icon"/>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#structure">Structure & Schedule</a>
+    </nav>
+  </header>
 
   <!-- HERO -->
   <section id="home" class="hero">
-    <h1>Selamat Datang di Kelas TKJ X</h1>
-    <p>Teknik Komputer & Jaringan - SMK Negeri 1 Kota</p>
-    <a href="https://chat.whatsapp.com/your_group_link" target="_blank" class="btn-wa">
-      <i class="fab fa-whatsapp"></i> Join Grup WA
-    </a>
+    <img src="assets/logo-tkj.png" alt="TKJ Logo" class="logo"/>
+    <h1>Welcome to <span>XI TKJ 3</span></h1>
+    <p>25 Students • 37 Achievements • 12 Events</p>
+    <div class="socials">
+      <a href="https://instagram.com/xi_tkj3" target="_blank"><i class="fab fa-instagram"></i> Class Instagram</a>
+      <a href="https://chat.whatsapp.com/invite/yourGroup" target="_blank"><i class="fab fa-whatsapp"></i> Join WhatsApp</a>
+    </div>
   </section>
 
-  <!-- JADWAL PELAJARAN -->
-  <section id="jadwal" class="section">
-    <h2>Jadwal Pelajaran</h2>
-    <table id="tabelJadwal"></table>
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <h2>Gallery</h2>
+    <div class="grid-gallery">
+      <!-- 17 student cards -->
+      <!-- auto-generated via JS -->
+    </div>
   </section>
 
-  <!-- JADWAL PIKET -->
-  <section id="piket" class="section">
-    <h2>Jadwal Piket</h2>
-    <table id="tabelPiket"></table>
-  </section>
+  <!-- STRUCTURE & SCHEDULE -->
+  <section id="structure" class="structure">
+    <h2>Structure & Schedule</h2>
 
-  <!-- DAFTAR SISWA -->
-  <section id="siswa" class="section">
-    <h2>Daftar Siswa (17)</h2>
-    <div class="grid-siswa" id="gridSiswa"></div>
-  </section>
+    <!-- Class Officers -->
+    <div class="officers">
+      <h3>Class Officers</h3>
+      <ul>
+        <li><strong>Wali Kelas:</strong> Abdul Wahab S.Pd</li>
+        <li><strong>Ketua Kelas:</strong> Putry</li>
+        <li><strong>Wakil Ketua:</strong> Jeriko</li>
+        <li><strong>Sekretaris:</strong> Pratiwi</li>
+        <li><strong>Bendahara:</strong> Lista</li>
+        <li><strong>Keamanan:</strong> Damar & Windi</li>
+        <li><strong>Kebersihan:</strong> Jeriko & Raka</li>
+        <li><strong>Kesehatan:</strong> Eki & Hendri</li>
+        <li><strong>Peralatan:</strong> Fajri, Windi, Fadly</li>
+      </ul>
+    </div>
 
-  <!-- STRUKTUR KELAS -->
-  <section id="struktur" class="section">
-    <h2>Struktur Kelas</h2>
-    <ul class="struktur-list">
-      <li><strong>Ketua Kelas:</strong> Andi Wijaya</li>
-      <li><strong>Wakil Ketua:</strong> Siti Nurhaliza</li>
-      <li><strong>Sekretaris:</strong> Budi Santoso</li>
-      <li><strong>Bendahara:</strong> Dewi Lestari</li>
-    </ul>
-  </section>
+    <!-- Schedule -->
+    <div class="schedule">
+      <h3>Class Schedule</h3>
+      <table id="scheduleTable">
+        <thead>
+          <tr><th>Day</th><th>08:00</th><th>09:00</th><th>10:00</th><th>11:00</th><th>12:00</th></tr>
+        </thead>
+        <tbody><!-- JS fills --></tbody>
+      </table>
+    </div>
 
-  <!-- FORUM DISKUSI -->
-  <section id="forum" class="section">
-    <h2>Forum Diskusi</h2>
-    <div id="chatBox"></div>
-    <form id="chatForm">
-      <input id="chatInput" placeholder="Tulis pesan..." required/>
-      <button type="submit">Kirim</button>
-    </form>
+    <!-- Duty Roster -->
+    <div class="piket">
+      <h3>Duty Roster</h3>
+      <table id="piketTable">
+        <thead><tr><th>Day</th><th>Student on Duty</th></tr></thead>
+        <tbody><!-- JS fills --></tbody>
+      </table>
+    </div>
+
+    <!-- Mini Forum -->
+    <div class="forum">
+      <h3>Quick Chat</h3>
+      <div id="chatBox"></div>
+      <form id="chatForm">
+        <input id="chatInput" placeholder="Ketik pesan..." required/>
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    &copy; 2025 TKJ Class X - Made with ❤️ by Murid TKJ
+    &copy; 2025 XI TKJ 3 - Made with ❤️ by our class.
   </footer>
 
   <script src="script.js"></script>
